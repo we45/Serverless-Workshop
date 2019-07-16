@@ -1,0 +1,65 @@
+service: we45-sls-workshop-dynamo-inject
+provider:
+  name: aws
+  runtime: python3.7
+  memorySize: 2048
+  timeout: 20
+  stage: dev
+  region: us-west-2
+
+  # you can add statements to the Lambda function's IAM Role here
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "logs:*"
+        - "dynamodb:*"
+      Resource:
+        - "*"
+
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    usePipenv: false
+    slim: true
+    strip: false
+
+functions:
+  deserial:
+    handler: handler.main
+    timeout: 20
+    events:
+      - http:
+          path: dynamo-search
+          method: post
+          cors: true
+
+resources:
+  Resources:
+    userDynamoTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: email
+            AttributeType: S
+        KeySchema:
+          - AttributeName: email
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: '5'
+          WriteCapacityUnits: '5'
+        TableName: we45-sls-users
+    cardDynamoTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: payment-card
+            AttributeType: S
+        KeySchema:
+          - AttributeName: payment-card
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: '5'
+          WriteCapacityUnits: '5'
+        TableName: we45-sls-payments

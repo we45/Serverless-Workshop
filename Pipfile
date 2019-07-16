@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+faker = "*"
+huepy = "*"
+lambdaguard = "*"
+
+[packages]
+python-docx = "==0.8.3"
+boto3 = "*"
+pyyaml = "==3.13"
+
+[requires]
+python_version = "3.7"

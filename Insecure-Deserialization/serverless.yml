@@ -1,0 +1,37 @@
+service: we45-sls-workshop-deserial
+provider:
+  name: aws
+  runtime: python3.7
+  memorySize: 2048
+  timeout: 20
+  stage: dev
+  region: us-west-2
+
+  # you can add statements to the Lambda function's IAM Role here
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "logs:*"
+        - "ec2:*"
+        - "s3:*"
+      Resource:
+        - "*"
+
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    usePipenv: false
+    slim: true
+    strip: false
+
+functions:
+  deserial:
+    handler: handler.main
+    timeout: 20
+    events:
+      - http:
+          path: yaml-upload
+          method: post
+          cors: true
