@@ -1,0 +1,3 @@
+jwcrypto
+pyjwt
+requests

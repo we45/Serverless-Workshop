@@ -3,3 +3,4 @@ DynamoDB-Injection/.serverless/*
 Insecure-Deserialization/.serverless/*
 XXE/.serverless/*
 Serverless-Workshop/.gitattributes
+JWT-JWK/.serverless/*
