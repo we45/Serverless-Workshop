@@ -1,3 +1,4 @@
 jwcrypto
 pyjwt
 requests
+boto3

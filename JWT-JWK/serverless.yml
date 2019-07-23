@@ -12,6 +12,8 @@ provider:
     - Effect: "Allow"
       Action:
         - "logs:*"
+        - "s3:*"
+        - "ssm:*"
       Resource:
         - "*"
 
@@ -24,8 +26,15 @@ custom:
     slim: true
     strip: false
 
+resources:
+  Resources:
+    S3JWKBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: jwk-resources-${sls:instanceId}
+
 functions:
-  deserial:
+  jwk-validate:
     handler: handler.main
     timeout: 20
     events:
@@ -33,3 +42,21 @@ functions:
           path: jwk
           method: get
           cors: true
+  jwk-init:
+    handler: handler.init
+    environment:
+      BUCKET_NAME: ${self:resources.Resources.S3JWKBucket.Properties.BucketName}
+    events:
+      - http:
+          path: init
+          method: get
+          cors: true
+  jwk-login:
+    handler: handler.login
+    events:
+      - http:
+          path: login
+          method: post
+          cors: true
+
+  
