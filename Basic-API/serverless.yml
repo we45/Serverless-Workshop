@@ -1,0 +1,33 @@
+service: we45-sls-basic-api
+provider:
+  name: aws
+  runtime: python3.7
+  memorySize: 512
+  timeout: 5
+  stage: dev
+  region: us-west-2
+
+  # you can add statements to the Lambda function's IAM Role here
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "logs:*"
+      Resource:
+        - "*"
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    usePipenv: false
+    slim: true
+    strip: false
+
+functions:
+  sns-reactor:
+    handler: handler.main
+    timeout: 5
+    events:
+      -http:
+        path: dynamo-search
+        method: get
