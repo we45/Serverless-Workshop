@@ -1,0 +1,33 @@
+service: we45-sls-basic-event
+provider:
+  name: aws
+  runtime: python3.7
+  memorySize: 512
+  timeout: 5
+  stage: dev
+  region: us-west-2
+
+  # you can add statements to the Lambda function's IAM Role here
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "logs:*"
+        - "sns:*"
+      Resource:
+        - "*"
+
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    usePipenv: false
+    slim: true
+    strip: false
+
+functions:
+  sns-reactor:
+    handler: handler.main
+    timeout: 5
+    events:
+      - sns: we45-sls-workshop-basic
