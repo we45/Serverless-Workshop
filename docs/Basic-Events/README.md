@@ -5,6 +5,7 @@ This lesson is a basic lesson in triggering serverless functions for Non-API Gat
 In this lesson, we will trigger a Serverless Function whenever messages are published over a particular SNS (Simple Notification Service) Topic (Channel)
 
 * In your image, navigate over to `/root/labs/Serverless-Workshop/Basic-Event`
+* Run `sls plugin install -n serverless-python-requirements`
 * Wait for instructor to explain the contents of the lab
 * Let's look at the contents of the `serverless.yml` [here](https://github.com/we45/Serverless-Workshop/blob/master/Basic-Event/serverless.yml)
 * Deploy the function with the command `sls deploy`
@@ -47,3 +48,8 @@ START RequestId: 1066617f-4b0f-4683-b91b-ffbd81e40a86 Version: $LATEST
 {'Records': TRUNCATED
 
 ```
+
+### Teardown
+
+* In your image, navigate over to `/root/labs/Serverless-Workshop/Basic-Events`
+* Run `sls remove` to remove stack
