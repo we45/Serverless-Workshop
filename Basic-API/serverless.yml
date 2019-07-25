@@ -24,10 +24,10 @@ custom:
     strip: false
 
 functions:
-  sns-reactor:
+  basic-api:
     handler: handler.main
     timeout: 5
     events:
-      -http:
-        path: dynamo-search
-        method: get
+      - http:
+          path: hello
+          method: get
