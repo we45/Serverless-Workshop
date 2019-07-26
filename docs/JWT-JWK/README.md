@@ -4,6 +4,7 @@
 * Run `pip3 install pipenv`
 * Run `pipenv install` and `pipenv shell` 
 * In your image, navigate over to `/root/labs/Serverless-Workshop/JWT-JWK`
+* Run `sls plugin install -n serverless-python-requirements`
 * Wait for instructor to explain the contents of the lab
 * Install a package for this to work `npm install -g jwt-cli`
 * Let's look at the contents of the `serverless.yml` [here](https://github.com/we45/Serverless-Workshop/blob/master/JWT-JWK/serverless.yml)
