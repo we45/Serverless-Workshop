@@ -10,11 +10,10 @@ This lesson is a basic lesson in triggering serverless functions for API Gateway
 * Wait for the function to deploy completely
 
 * Now, invoke the function with: 
-```bash
 
-http GET https://XXXXXXXX.execute-api.us-west-2.amazonaws.com/dev/hello
-
-```
+    ```bash
+    http GET https://XXXXXXXX.execute-api.us-west-2.amazonaws.com/dev/hello
+    ```
 
 ### Teardown
 
