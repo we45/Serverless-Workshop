@@ -28,7 +28,7 @@ In this lesson, we will trigger a Serverless Function whenever messages are publ
 *You have to have configured AWS CLI by now*
 
 ```bash
-aws sns publish --topic-arn "<Copied ARN>" --message "I am going to be pwning Serverless Functions soon!"
+aws sns publish --region '<region>' --topic-arn "<Copied ARN>" --message "I am going to be pwning Serverless Functions soon!"
 
 ```
 **Remember to substitute the `<Copied ARN>` with the ARN that you copied from the previous step**
