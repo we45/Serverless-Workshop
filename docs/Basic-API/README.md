@@ -27,10 +27,9 @@ sls deploy
 * Wait for the function to deploy completely
 
 * Step 5: Now, invoke the function with: 
+
 ```commandline
-
-http GET https://XXXXXXXX.execute-api.us-west-2.amazonaws.com/dev/hello
-
+    http GET https://XXXXXXXX.execute-api.us-west-2.amazonaws.com/dev/hello
 ```
 
 ### Teardown

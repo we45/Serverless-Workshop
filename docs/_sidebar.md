@@ -4,3 +4,5 @@
 * [Basic Serverless Events](Basic-Events/README.md)
 * [DynamoDB Injection](DynamoDB-Injection/README.md)
 * [Insecure Deserialization](Insecure-Deserialization/README.md)
+* [JWT JWK](JWT-JWK/README.md)
+* [LambdaGuard](Lambdaguard/README.md)
