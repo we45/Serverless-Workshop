@@ -31,5 +31,5 @@ functions:
     timeout: 20
     events:
       - s3:
-          bucket: abhayb-we45-sls
+          bucket: we45-sls-xxe-${sls:instanceId}
           event: s3:ObjectCreated:*
