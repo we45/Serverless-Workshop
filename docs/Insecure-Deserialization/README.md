@@ -1,6 +1,8 @@
 # Insecure Deserialization
 
-In this example, we'll leverage an Insecure Deserialization Attack to compromise and perform lateral movement against the AWS Account
+>In this example, we'll leverage an Insecure Deserialization Attack to compromise and perform lateral movement against the AWS Account
+
+**Note:** If you have not setup your aws cli follow [AWS-CLI-Configuration](aws-configure/README.md) under the `Setup` section*
 
 * Step 1: In your image, navigate over to `/root/labs/Serverless-Workshop/Insecure-Deserialization`
 
@@ -124,30 +126,55 @@ aws dynamodb list-tables
 aws ec2 run-instances --image-id ami-9abea4fb --count 1 --instance-type t2.micro
 ```
 
+* Step 14:  Now access your AWS Console and look `EC2`, and go to `instances` and check the `instances status`. It should show `running`. That means Server has been provisioned.
+ 
+![EC2 Instance](img/ec2.png)
+
 ## Clean up - Very important!!!
+
+* Step 15: Get *ec2 InstanceId*  `aws ec2  describe-instances | grep InstanceId`
+
+```commandline
+aws ec2  describe-instances | grep InstanceId
+``` 
+
+* Step 16: Copy the `InstanceId` and terminate the `ec2` instance `aws ec2 terminate-instances --instance-ids <InstanceId Value>`
+
+```commandline
+aws ec2 terminate-instances --instance-ids <InstanceId Value>
+```
+
+
 ### You don't want to leave your AWS Account with actively exploitable RCE flaw
 
-* Step 14: Unset the AWS_ACCESS_KEY_ID
+* Step 17: Unset the AWS_ACCESS_KEY_ID
 
 ```commandline
 unset AWS_ACCESS_KEY_ID
 ```
 
-* Step 15: Unset the AWS_SECRET_ACCESS_KEY
+* Step 18: Unset the AWS_SECRET_ACCESS_KEY
 
 ```commandline
 unset AWS_SECRET_ACCESS_KEY
 ```
 
-* Step 16: Unset the AWS_SESSION_TOKEN
+* Step 19: Unset the AWS_SESSION_TOKEN
 
 ```commandline
 unset AWS_SESSION_TOKEN
 ```
 
-* Step 17: now run `sls remove` to remove the vulnerable function from your account
+* Step 20: In your image, navigate over to `/root/labs/Serverless-Workshop/Insecure-Deserialization`
 
 ```commandline
-sls remove
+cd /root/labs/Serverless-Workshop/Insecure-Deserialization
 ```
+
+* Step 21: now run `sls remove` to remove the vulnerable function from your account
+
+```commandline
+sls remove --force
+```
+
 

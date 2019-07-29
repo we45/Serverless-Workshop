@@ -1,11 +1,17 @@
 # Basics - Serverless Events
 
-This lesson is a basic lesson in triggering serverless functions for API Gateway Events. 
+>This lesson is a basic lesson in triggering serverless functions for API Gateway Events. 
+
+**Note:** If you have not setup your aws cli follow [AWS-CLI-Configuration](aws-configure/README.md) under the `Setup` section*
 
 * Step 1: In your image, navigate over to `/root/labs/Serverless-Workshop/Basic-API`
 
 ```commandline
 cd /root/labs/Serverless-Workshop/Basic-API
+```
+
+```commandline
+git pull
 ```
 
 * Step 2: Run `sls plugin install -n serverless-python-requirements`
@@ -43,5 +49,5 @@ cd /root/labs/Serverless-Workshop/Basic-API
 * Step 7: Run `sls remove` to remove stack
 
 ```commandline
-sls remove
+sls remove --force
 ```

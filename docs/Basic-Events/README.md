@@ -1,8 +1,9 @@
 # Basics - Serverless Events
 
-This lesson is a basic lesson in triggering serverless functions for Non-API Gateway Events. 
-
+>This lesson is a basic lesson in triggering serverless functions for Non-API Gateway Events. 
 In this lesson, we will trigger a Serverless Function whenever messages are published over a particular SNS (Simple Notification Service) Topic (Channel)
+
+**Note:** If you have not setup your aws cli follow [AWS-CLI-Configuration](aws-configure/README.md) under the `Setup` section*
 
 * Step 1: In your image, navigate over to `/root/labs/Serverless-Workshop/Basic-Event`
 
@@ -77,5 +78,5 @@ cd /root/labs/Serverless-Workshop/Basic-Events
 * Step 11: Run `sls remove` to remove stack
 
 ```commandline
-sls remove
+sls remove --force
 ```

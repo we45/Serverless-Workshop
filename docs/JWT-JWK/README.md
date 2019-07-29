@@ -1,5 +1,7 @@
 ## JWT - JKU Authorization Bypass
 
+**Note:** If you have not setup your aws cli follow [AWS-CLI-Configuration](aws-configure/README.md) under the `Setup` section*
+
 * Step 1: In your image, navigate over to `/root/labs/Serverless-Workshop/`
 
 ```commandline
@@ -133,10 +135,22 @@ python -m http.server
 
 In the **Tab 3**:
 
-* Step 16: Run `ngrok http 8000`
+* Step 16: Install *ngrok* `wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip`
 
 ```commandline
-ngrok http 8000
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+```
+
+* Step 17: `unzip` the *ngrok* `unzip ngrok-stable-linux-amd64.zip`
+
+```commandline
+unzip ngrok-stable-linux-amd64.zip
+```
+
+* Step 18: Run `./ngrok http 8000`
+
+```commandline
+./ngrok http 8000
 ```
 
 ```bash
@@ -151,13 +165,13 @@ Forwarding                    https://f8ccd11d.ngrok.io -> localhost:8000
 ```
 
 Back in **Tab 1**:
-* Step 17: Run `python token_gen.py https://f8ccd11d.ngrok.io`
+* Step 17: Run `python token_gen.py https://f8ccd11d.ngrok.io` with copied *ngrok*  https `Forwarding` value 
 
 ```commandline
-python token_gen.py https://f8ccd11d.ngrok.io
+python token_gen.py https://<ngrok https forwarding value>.ngrok.io
 ```
  
-* Step 18: Copy the generated token starting `ey....` from the `Step 11`
+* Step 18: Copy the generated token starting `ey....`
 
 * Step 19: Run
  
@@ -165,12 +179,12 @@ python token_gen.py https://f8ccd11d.ngrok.io
 http GET https://XXXXXXX.execute-api.us-west-2.amazonaws.com/dev/jwk Authorization:<Copied Token>
 ```
 
-You should see a response, that you are administrator
+**Note:** You should see a response, that you are administrator
 
 
 ### Teardown
 
-* Step 20: In your image, navigate over to `/root/labs/Serverless-Workshop/Basic-API`
+* Step 20: **Tab 1**, navigate over to `/root/labs/Serverless-Workshop/JWT-JWK`
 
 ```commandline
 cd /root/labs/Serverless-Workshop/JWT-JWK
@@ -179,11 +193,19 @@ cd /root/labs/Serverless-Workshop/JWT-JWK
 * Step 21: Run `sls remove` to remove stack
 
 ```commandline
-sls remove
+sls remove --force
 ```
 
-* Step 21: Deactivate `pipenv` using `deactivate` command
+* Step 22: Deactivate `pipenv` using `deactivate` command
 
 ```commandline
 deactivate
 ```
+
+```commandline
+exit
+```
+
+* Step 23: **Tab 2** Run `ctrl+c` and close tab
+
+* Step 24: **Tab 3** Run `ctrl+c` and close tab
