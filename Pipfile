@@ -13,7 +13,7 @@ python-docx = "==0.8.3"
 boto3 = "*"
 pyyaml = "==3.13"
 jwcrypto = "*"
-pyjwt = "*"
+pyjwt = "==1.4.2"
 
 [requires]
 python_version = "3.7"

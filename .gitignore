@@ -5,3 +5,4 @@ Serverless-Workshop/.gitattributes
 JWT-JWK/.serverless/*
 Basic-Event/.serverless/*
 Basic-API/.serverless/*
+Algo-Confusion/.serverless/*

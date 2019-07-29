@@ -1,0 +1,40 @@
+service: we45-sls-workshop-algo-confusion
+provider:
+  name: aws
+  runtime: python3.7
+  memorySize: 512
+  timeout: 5
+  stage: dev
+  region: us-west-2
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "logs:*"
+      Resource:
+        - "*"      
+
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    usePipenv: false
+    slim: true
+    strip: false
+
+functions:
+  init-algo:
+    handler: handler.init
+    events:
+      - http: 
+          path: init
+          method: GET
+          cors: true
+  verify-algo:
+    handler: handler.verify
+    events:
+      - http:
+          path: verify
+          method: GET
+          cors: true
+
