@@ -69,10 +69,10 @@ START RequestId: 1066617f-4b0f-4683-b91b-ffbd81e40a86 Version: $LATEST
 
 ### Teardown
 
-* Step 10: In your image, navigate over to `/root/labs/Serverless-Workshop/Basic-Events`
+* Step 10: In your image, navigate over to `/root/labs/Serverless-Workshop/Basic-Event`
 
 ```commandline
-cd /root/labs/Serverless-Workshop/Basic-Events
+cd /root/labs/Serverless-Workshop/Basic-Event
 ```
 
 * Step 11: Run `sls remove` to remove stack
