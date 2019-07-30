@@ -2,7 +2,7 @@
 
 ## Signing up for the Lab Management System
 
->You will be a state-of-the-art lab management system for this class. This works as follows: 
+>You will be using a state-of-the-art lab management system for this class. This works as follows: 
 
 
 * You will need to sign-up with a special code (given by your instructor) for the Lab [at this link](https://lab.we45.training)

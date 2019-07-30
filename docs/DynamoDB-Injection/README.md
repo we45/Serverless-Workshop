@@ -37,32 +37,13 @@ pipenv install faker
 pipenv install huepy
 ``` 
 
-
-* Step 4: In your image, navigate over to `/root/labs/Serverless-Workshop/DynamoDB-Injection/ops`
-
-```commandline
-cd /root/labs/Serverless-Workshop/DynamoDB-Injection/ops
-```
-
-* Step 5: Create dummy users `python create_dummies.py users we45-sls-users`
-
-```commandline
-python create_dummies.py users we45-sls-users
-```
-
-* Step 6: Create dummy payment cards `python create_dummies.py cards we45-sls-payments`
-
-```commandline
-python create_dummies.py cards we45-sls-payments
-```
-
-* Step 7: In your image, navigate over to `/root/labs/Serverless-Workshop/DynamoDB-Injection`
+* Step 4: In your image, navigate over to `/root/labs/Serverless-Workshop/DynamoDB-Injection`
 
 ```commandline
 cd /root/labs/Serverless-Workshop/DynamoDB-Injection
 ```
 
-* Step 8: Run `sls plugin install -n serverless-python-requirements`
+* Step 5: Run `sls plugin install -n serverless-python-requirements`
 
 ```commandline
 sls plugin install -n serverless-python-requirements
@@ -70,15 +51,35 @@ sls plugin install -n serverless-python-requirements
 
 * Wait for instructor to explain the contents of the lab
 
-* Step 9: Let's look at the contents of the `serverless.yml` [here](https://github.com/we45/Serverless-Workshop/blob/master/DynamoDB-Injection/serverless.yml)
+* Step 6: Let's look at the contents of the `serverless.yml` [here](https://github.com/we45/Serverless-Workshop/blob/master/DynamoDB-Injection/serverless.yml)
 
-* Step 10: Deploy the function with the command `sls deploy`
+* Step 7: Deploy the function with the command `sls deploy`
 
 ```commandline
 sls deploy
 ```
 
 * Wait for the function to deploy completely 
+
+
+* Step 8: In your image, navigate over to `/root/labs/Serverless-Workshop/DynamoDB-Injection/ops`
+
+```commandline
+cd /root/labs/Serverless-Workshop/DynamoDB-Injection/ops
+```
+
+* Step 9: Create dummy users `python create_dummies.py users we45-sls-users`
+
+```commandline
+python create_dummies.py users we45-sls-users
+```
+
+* Step 10: Create dummy payment cards `python create_dummies.py cards we45-sls-payments`
+
+```commandline
+python create_dummies.py cards we45-sls-payments
+```
+
 
 * Step 11: Let's now run a genuine search against the database with this command
 

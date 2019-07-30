@@ -37,7 +37,7 @@ You will be prompted to enter you aws credentials
 
 * Step 15: Once you complete the configuration type
 ```commandline
-cat .aws/credentials
+cat /root/.aws/credentials
 ```
 
 The output of the following command will look like

@@ -49,7 +49,7 @@ sls deploy
 aws sns publish --region '<region>' --topic-arn "<Copied ARN>" --message "I am going to be pwning Serverless Functions soon!"
 
 ```
-**Remember to substitute the `<Copied ARN>` with the ARN that you copied from the previous step**
+**Remember to substitute the `<Copied ARN>` with the ARN that you copied from the previous step and also replace the region**
 
 * Step 9: Now, let's see whether the Serverless Function worked, by running the following command
 
