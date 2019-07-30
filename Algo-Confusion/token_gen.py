@@ -1,4 +1,5 @@
 import jwt
+from huepy import *
 from sys import argv
 from os.path import isfile
 
@@ -10,6 +11,6 @@ if __name__ == "__main__":
         if isfile(filepath):
             key = open(filepath, 'r').read()
             token = jwt.encode({"user": "admin", "authenticated": True}, key, algorithm="HS256").decode()
-            print("[+] Token is:\n{}".format(token))
+            print(green("[+] Token is:\n{}".format(token)))
         else:
             raise Exception("[!] File Not found. Please try again")

@@ -5,4 +5,6 @@ Serverless-Workshop/.gitattributes
 JWT-JWK/.serverless/*
 Basic-Event/.serverless/*
 Basic-API/.serverless/*
+.idea/
 Algo-Confusion/.serverless/*
+.DS_Store

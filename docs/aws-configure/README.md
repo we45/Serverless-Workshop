@@ -28,21 +28,23 @@
 
 * Step 14: Initiate configuration
 
-	 `aws configure`
+``` commandline
+aws configure
+```
+You will be prompted to enter you aws credentials
 
-     You will be prompted to enter you aws credentials
-
-     ![Image](./img/config.png)
+![Image](./img/config.png)
 
 * Step 15: Once you complete the configuration type
+```commandline
+cat .aws/credentials
+```
 
-    `cat .aws/credentials`
+The output of the following command will look like
 
-    The output of the following command will look like
+![Image](./img/creds.png)
 
-    ![Image](./img/creds.png)
-
-    In the picture credentials are blurred, you will be able to see your creds in plain text
+In the picture credentials are blurred, you will be able to see your credentials in plain text
 
 
 
