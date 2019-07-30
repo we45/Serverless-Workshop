@@ -121,6 +121,7 @@ Payload
 * Step 13: Now, open another two tabs of your lab image. You have now a total of three tabs. Let's call the current tab, **Tab 1**
 
 In the **Tab 2**: 
+
 * Step 14: In your image, navigate over to `/root/labs/Serverless-Workshop/JWT-JWK`
 
 ```commandline
@@ -140,14 +141,19 @@ In the **Tab 3**:
 ```commandline
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 ```
+* Step 17: Run `apt-get install unzip`
 
-* Step 17: `unzip` the *ngrok* `unzip ngrok-stable-linux-amd64.zip`
+```commandline
+apt-get install unzip
+```
+
+* Step 18: `unzip` the *ngrok* `unzip ngrok-stable-linux-amd64.zip`
 
 ```commandline
 unzip ngrok-stable-linux-amd64.zip
 ```
 
-* Step 18: Run `./ngrok http 8000`
+* Step 19: Run `./ngrok http 8000`
 
 ```commandline
 ./ngrok http 8000
@@ -165,15 +171,15 @@ Forwarding                    https://f8ccd11d.ngrok.io -> localhost:8000
 ```
 
 Back in **Tab 1**:
-* Step 17: Run `python token_gen.py https://f8ccd11d.ngrok.io` with copied *ngrok*  https `Forwarding` value 
+* Step 20: Run `python token_gen.py https://f8ccd11d.ngrok.io` with copied *ngrok*  https `Forwarding` value 
 
 ```commandline
 python token_gen.py https://<ngrok https forwarding value>.ngrok.io
 ```
  
-* Step 18: Copy the generated token starting `ey....`
+* Step 21: Copy the generated token starting `ey....`
 
-* Step 19: Run
+* Step 22: Run
  
 ```bash
 http GET https://XXXXXXX.execute-api.us-west-2.amazonaws.com/dev/jwk Authorization:<Copied Token>
@@ -184,19 +190,19 @@ http GET https://XXXXXXX.execute-api.us-west-2.amazonaws.com/dev/jwk Authorizati
 
 ### Teardown
 
-* Step 20: **Tab 1**, navigate over to `/root/labs/Serverless-Workshop/JWT-JWK`
+* Step 23: **Tab 1**, navigate over to `/root/labs/Serverless-Workshop/JWT-JWK`
 
 ```commandline
 cd /root/labs/Serverless-Workshop/JWT-JWK
 ```
 
-* Step 21: Run `sls remove` to remove stack
+* Step 24: Run `sls remove` to remove stack
 
 ```commandline
 sls remove --force
 ```
 
-* Step 22: Deactivate `pipenv` using `deactivate` command
+* Step 25: Deactivate `pipenv` using `deactivate` command
 
 ```commandline
 deactivate
@@ -206,6 +212,6 @@ deactivate
 exit
 ```
 
-* Step 23: **Tab 2** Run `ctrl+c` and close tab
+* Step 26: **Tab 2** Run `ctrl+c` and close tab
 
-* Step 24: **Tab 3** Run `ctrl+c` and close tab
+* Step 27: **Tab 3** Run `ctrl+c` and close tab
