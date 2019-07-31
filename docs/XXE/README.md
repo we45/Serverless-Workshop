@@ -29,6 +29,10 @@ sls deploy
 * Step 5: Now, run: 
 
 ```commandline
+aws s3 ls | grep we45-sls-xxe-
+```
+
+```commandline
 aws s3 cp Pass.docx s3://<name of your s3 bucket/Pass.docx
 ```
 
@@ -48,7 +52,7 @@ You should see the `/etc/passwd` file of the Lambda VM being dumped on screen
 cd /root/labs/Serverless-Workshop/XXE
 ```
 
-* Step 8: Run `sls remove` to remove stack
+* Step 8: Run `sls remove --force` to remove stack
 
 ```commandline
 sls remove --force
