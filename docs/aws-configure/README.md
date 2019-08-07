@@ -1,5 +1,5 @@
-# AWS CLI Configuration
-
+## AWS CLI Configuration
+---
 * Step 1: Go to browser
 
 * Step 2: Signup/Signin to aws console
@@ -28,24 +28,29 @@
 
 * Step 14: Initiate configuration
 
-``` commandline
+```commandline
 aws configure
 ```
+
 You will be prompted to enter you aws credentials
 
 ![Image](./img/config.png)
 
+> **NOTE**: Ensure that the `Default region name` is `us-west-2`
+
 * Step 15: Once you complete the configuration type
+
 ```commandline
 cat /root/.aws/credentials
 ```
-
 The output of the following command will look like
 
-![Image](./img/creds.png)
+![Image](./img/aws_cred.png)
 
-In the picture credentials are blurred, you will be able to see your credentials in plain text
+```commandline
+cat /root/.aws/config
+```
+The output of the following command will look like
 
-
-
+![Image](./img/get_config.png)
 
