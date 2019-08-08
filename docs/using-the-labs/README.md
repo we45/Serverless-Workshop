@@ -11,6 +11,12 @@
 https://lab.we45.training
 ```
 
+* Event Code
+
+```commandline
+dc27-sls-workshop-appsec-XtRHD
+```
+
 ![Register Page](img/register_page.png) 
 
 
