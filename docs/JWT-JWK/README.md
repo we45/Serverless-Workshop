@@ -20,6 +20,10 @@ pip3 install pipenv
 pipenv install
 ```
 
+```commandline
+pipenv install jwcrypto
+```
+
 * Step 4: `pipenv shell`
 
 ```commandline
@@ -101,6 +105,8 @@ you should see output like this
 ```commandline
 jwt <copied token value>
 ```
+
+or you can check [here](https://jwt.io/)
 
 * You should see something like this
 

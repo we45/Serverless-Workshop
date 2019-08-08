@@ -33,7 +33,7 @@ aws s3 ls | grep we45-sls-xxe-
 ```
 
 ```commandline
-aws s3 cp Pass.docx s3://<name of your s3 bucket/Pass.docx
+aws s3 cp Pass.docx s3://< name of your s3 bucket >/Pass.docx
 ```
 
 * Step 6: Wait for a few seconds post upload and run:
@@ -51,6 +51,8 @@ You should see the `/etc/passwd` file of the Lambda VM being dumped on screen
 ```commandline
 cd /root/labs/Serverless-Workshop/XXE
 ```
+
+* Got to aws console and click s3 and then delete `we45-sls-xxe-` bucket
 
 * Step 8: Run `sls remove --force` to remove stack
 
