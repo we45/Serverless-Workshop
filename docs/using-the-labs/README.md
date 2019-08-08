@@ -4,6 +4,7 @@
 
 >You will be using a state-of-the-art lab management system for this class. This works as follows: 
 
+### Hangouts Link: https://meet.google.com/xcn-gwqr-qip
 
 * You will need to sign-up with a special code (given by your instructor) for the Lab [at this link](https://lab.we45.training)
 
