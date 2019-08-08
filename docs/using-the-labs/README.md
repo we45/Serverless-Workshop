@@ -7,6 +7,10 @@
 
 * You will need to sign-up with a special code (given by your instructor) for the Lab [at this link](https://lab.we45.training)
 
+``` Commandline
+https://lab.we45.training
+```
+
 ![Register Page](img/register_page.png) 
 
 
