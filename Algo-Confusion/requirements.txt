@@ -1,2 +1,2 @@
 cryptography
-pyjwt==1.5.0
+pyjwt==2.4.0
