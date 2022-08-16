@@ -1,2 +1,2 @@
 boto3
-python-docx==0.8.3
+python-docx==0.8.6
