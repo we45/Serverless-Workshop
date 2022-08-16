@@ -9,7 +9,7 @@ huepy = "*"
 lambdaguard = "*"
 
 [packages]
-python-docx = "==0.8.3"
+python-docx = "==0.8.6"
 boto3 = "*"
 pyyaml = "==3.13"
 jwcrypto = "*"
